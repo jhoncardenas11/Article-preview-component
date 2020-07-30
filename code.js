@@ -6,8 +6,13 @@ function showSharedBox(e) {
     e.preventDefault();
     const floatBox = document.getElementById('floatBox');
     if (floatBox.style.visibility === 'hidden') {
+        floatBox.classList.add('fade');
+        floatBox.classList.remove('fadeOut');
         floatBox.style.visibility = "visible";
     } else {
-        floatBox.style.visibility = "hidden";
+        floatBox.classList.add('fadeOut');
+        setTimeout(() => {
+            floatBox.style.visibility = "hidden";
+        }, 1000);
     }
 }
